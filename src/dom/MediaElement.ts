@@ -159,8 +159,14 @@ namespace videomock.dom {
   }
 
   MediaElement.prototype._dispatchEvent = function(eventName: string, eventData?: any): void {
-    let evt: CustomEvent = new CustomEvent(eventName, eventData)
+		let evt: CustomEvent;
 
+		if (window['MSStream']) {
+			evt = document.createEvent('CustomEvent')
+			evt.initEvent(eventName, true, true);
+		} else {
+			evt = new CustomEvent(eventName, eventData)
+		}
     this._handleEvent(evt)
   }
 

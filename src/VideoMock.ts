@@ -158,11 +158,21 @@ namespace videomock {
         }
       }
 
-      this._handleEvent(new ProgressEvent(event.MediaEvent.progress, {
-        'lengthComputable': true,
-        'loaded': this._bytesLoaded,
-        'total': this._bytesTotal,
-      }))
+			let progressEvent: any;
+
+			// check for internet explorer
+			if (window['MSStream']) {
+				progressEvent = document.createEvent('ProgressEvent')
+				progressEvent.initProgressEvent('progress', true, true, true, this._bytesLoaded, this._bytesTotal)
+			} else {
+				progressEvent = new ProgressEvent(event.MediaEvent.progress, {
+	        'lengthComputable': true,
+	        'loaded': this._bytesLoaded,
+	        'total': this._bytesTotal,
+	      })
+			}
+
+      this._handleEvent(progressEvent)
 
     }, VideoMock.PROGRESS_TIMER_RATE)
   }
