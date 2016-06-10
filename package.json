@@ -16,6 +16,7 @@
   "devDependencies": {
     "http-server": "0.8.5",
     "karma": "^0.13.18",
+    "karma-browserstack-launcher": "^1.0.1",
     "karma-jasmine": "^0.3.6",
     "karma-phantomjs-launcher": "^0.2.3",
     "karma-spec-reporter": "0.0.23",
@@ -36,6 +37,7 @@
     "dev": "npm run build && npm run sample",
     "uglify": "node node_modules/uglify-js/bin/uglifyjs -o dist/videomock.min.js dist/videomock.js",
     "test": "npm run lint && npm run build && node node_modules/karma/bin/karma start",
-    "lint": "node node_modules/tslint/bin/tslint -c .tslint src/**/*.ts"
+		"testjen": "npm run build && node node_modules/karma/bin/karma start",
+    "lint": "node node_modules/tslint/bin/tslint -c tslint.json src/**/*.ts"
   }
 }

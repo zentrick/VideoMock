@@ -1,0 +1,6 @@
+{
+	"bs_ios_5": {"browserName": "iPhone", "platform": "MAC", "device": "iPhone 4S", "os": "ios", "os_version": "5.1"},
+	"bs_ios_7": {"browserName": "iPhone", "platform": "MAC", "device": "iPhone 5S", "os": "ios", "os_version": "7.0"},
+	"bs_ios_8": {"browserName": "iPhone", "platform": "MAC", "device": "iPhone 6", "os": "ios", "os_version": "8.3"},
+	"bs_ios_9": {"browserName": "iPhone", "platform": "MAC", "device": "iPhone 6S", "os": "ios", "os_version": "9.1"}
+}

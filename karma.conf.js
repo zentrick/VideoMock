@@ -1,5 +1,26 @@
 // Karma configuration
-// Generated on Tue Jan 05 2016 23:48:18 GMT+0100 (CET)
+// Not generated on Tue Jan 05 2016 23:48:18 GMT+0100 (CET)
+
+var customLaunchers = require('./test/capabilities-android.json');
+
+for (var prop in customLaunchers) {
+	if (customLaunchers.hasOwnProperty(prop)) {
+		customLaunchers[prop].base = 'BrowserStack'
+	}
+}
+
+var objPropsToArray = function (obj) {
+	var arr = [];
+	for (var prop in obj) {
+		if (obj.hasOwnProperty(prop)) {
+			arr.push(prop);
+		}
+	}
+
+	return arr;
+}
+
+var customLaunchersArr = objPropsToArray(customLaunchers);
 
 module.exports = function(config) {
   config.set({
@@ -15,7 +36,7 @@ module.exports = function(config) {
     files: [
       // Polyfills
       'node_modules/document-register-element/build/document-register-element.js', // this one work in PhantomJS, webcomponentjs one fail
-      'node_modules/customevent-polyfill/CustomEvent.js',
+      // 'node_modules/customevent-polyfill/CustomEvent.js',
       'node_modules/webcomponents.js/MutationObserver.js',
 
       // Common test for HTMLElement implementation
@@ -26,7 +47,8 @@ module.exports = function(config) {
       'dist/videomock.js',
 
       // Tests
-      'test/**/*spec.js',
+      // 'test/**/*spec.js'
+			'test/HTMLVideoMock.spec.js'
     ],
 
     // list of files to exclude
@@ -84,16 +106,29 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
-
+    // browsers: ['brokenie'], //,'PhantomJS'
+		browsers: customLaunchersArr,
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true,
+
+		concurrency: 1,
+
+		retryLimit: 0,
+
+		// global config of your BrowserStack account
+    browserStack: {
+      username: 'zentrick1',
+      accessKey: 'HF4k1gYkA1RpKAZgb3UG'
+    },
+    // define browsers
+    customLaunchers: customLaunchers
+		// customLaunchers = require('./capabilities-desktop.json').capabilities
   });
 };

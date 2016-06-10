@@ -1,0 +1,14 @@
+{
+	"bs_firefox_windows": {"browser" : "Firefox", "browser_version" : "46.0", "os" : "Windows", "os_version" : "10"},
+	"bs_firefox_mac": {"browser" : "Firefox", "browser_version" : "46.0", "os" : "OS X", "os_version" : "El Capitan"},
+
+	"bs_edge_windows": {"browser" : "Edge", "browser_version" : "13.0", "os" : "Windows", "os_version" : "10"},
+	"bs_ie_11_windows": {"browser" : "IE", "browser_version" : "11.0", "os" : "Windows", "os_version" : "10"},
+	"bs_ie_10_windows": {"browser" : "IE", "browser_version" : "10.0", "os" : "Windows", "os_version" : "7"},
+	"bs_ie_9_windows": {"browser" : "IE", "browser_version" : "9.0", "os" : "Windows", "os_version" : "7"},
+
+	"bs_chrome_windows": {"browser" : "Chrome", "browser_version" : "50.0", "os" : "Windows", "os_version" : "10"},
+	"bs_chrome_mac": {"browser" : "Chrome", "browser_version" : "50.0", "os" : "OS X", "os_version" : "El Capitan"},
+
+	"bs_safari_mac": {"browser" : "Safari", "browser_version" : "9.1", "os" : "OS X", "os_version" : "El Capitan"}
+}

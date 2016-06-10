@@ -1,0 +1,6 @@
+{
+	"bs_android_old": {"browserName": "android", "platform": "ANDROID", "device": "HTC One X", "os": "android", "os_version": "4.0"},
+	"bs_android_4": {"browserName": "android", "platform": "ANDROID", "device": "Samsung Galaxy S5", "os": "android", "os_version": "4.4"},
+	"bs_android_5": {"browserName": "android", "platform": "ANDROID", "device": "Google Nexus 5", "os": "android", "os_version": "5.0"},
+	"bs_android_new": {"browserName": "android", "platform": "ANDROID", "device": "Google Nexus 9", "os": "android", "os_version": "5.1", "real_mobile": true}
+}
